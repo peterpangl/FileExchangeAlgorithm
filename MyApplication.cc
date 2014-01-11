@@ -32,7 +32,7 @@
 
 Define_Module(MyApplication);
 
-list<SeederNode> Seeders;      // list of Seeders including their ip address
+list<SeederNode> Seeders;      	// list of Seeders including their ip address
 list<LeecherNode> Leechers;     // list of Leechers
 int numNode = 0;
 
@@ -52,7 +52,7 @@ void MyApplication::initializeApp(int stage)
 	IPvXAddress ipAddr = thisNode.getIp();          // node ip
     
     // copy the module parameter values to our own variables
-    sendPeriod = par("sendPeriod");     //defined in omnetpp.ini
+    sendPeriod = par("sendPeriod");     		//defined in omnetpp.ini
     numToSend = par("numToSend");
 	numSeeders = par("numSeeders");
 	numPktFile = par("numPktFile");
@@ -63,7 +63,7 @@ void MyApplication::initializeApp(int stage)
     if(flag < numSeeders){
         //this node will be a seeder
     	SeederNode seeder;
-        seeder.seederIp = ipAddr;      //push this ip to seeders list
+        seeder.seederIp = ipAddr;      			//push this ip to seeders list
         seeder.gotInfo = 0;
         Seeders.push_back(seeder);
         cout << "this node: " << seeder.seederIp << " initialized as seeder!" << endl;
