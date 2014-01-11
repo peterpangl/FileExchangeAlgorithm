@@ -53,15 +53,10 @@ void MyApplication::constructBasesOfSeeder(MyMessage *myMsg, list<SeederNode>::i
 	IPvXAddress neighborAddr = myMsg->getSenderAddress().getIp();
 
 
-//	cout << neighborAddr << " has: ";
-	for (i = 0; i < myMsg->getIdsArraySize(); i++) {		// always idsArraySize!=0
-		neighborIds.push_back(myMsg->getIds(i));			// copy to neighbor ids
-//		cout << neighborIds.at(i) << " ";
-	}
 
-//	cout << endl;
-//	cout << sit->seederIp << " has: ";
-	//for(myId = 1; myId <= numPktFile; myId++){cout << myId << " "; } cout << endl; // for debug
+	for (i = 0; i < myMsg->getIdsArraySize(); i++) {		// always idsArraySize!=0
+		neighborIds.push_back(myMsg->getIds(i));		// copy to neighbor ids
+	}
 
 	ctCom.nodeAddr = neighborAddr;
 	ctNh.nodeAddr = neighborAddr;
