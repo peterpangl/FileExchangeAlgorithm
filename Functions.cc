@@ -31,8 +31,6 @@ bool MyApplication::isSeeder() {
 // checks if idExists already in leecher's buffer
 bool MyApplication::idExists(int pktId, list<LeecherNode>::iterator it){
 
-    //cout << "----->idExists()? pktRcv: " << pktId << endl;
-
     list<int>::iterator bufIt;
     for (bufIt = it->lBuf.begin(); bufIt != it->lBuf.end(); bufIt++) {
         //cout << "Already Exists() : " << *bufIt << endl;
