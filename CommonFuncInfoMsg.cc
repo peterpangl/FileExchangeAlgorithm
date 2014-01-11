@@ -16,7 +16,7 @@ Define_Module(MyApplication);
 
 // check if we have already compute the score of this id
 int MyApplication::checkIfExist(int s, list<struct idScore> X){
-	//cout<<"-------checkIfExist------" << endl;
+
     list<struct idScore>::iterator it;
     int so;
 
@@ -42,14 +42,14 @@ void MyApplication::xorPktsANDSend(int newPkt, int commonPkt, list<IPvXAddress> 
 	// msg
 	MyMessage *myMsg;
 	myMsg = new MyMessage();
-	myMsg->setType(XOR);		  		// set the msg type to XORED_IDS
+	myMsg->setType(XOR);		  	// set the msg type to XORED_IDS
 	myMsg->setSenderAddress(thisNode);  	// set the sender address to our own
-	myMsg->setByteLength(16384);	            // set the message length to 100 bytes
+	myMsg->setByteLength(16384);	        // set the message length to 100 bytes
 
 	// pass to the msg the ids's combination
 	myMsg->setXoredIdsArraySize(2);		// set the size of ids array
-	myMsg->setXoredIds( 0, commonPkt );		// set the commonPkt id
-	myMsg->setXoredIds( 1, newPkt );			// set the newPkt id
+	myMsg->setXoredIds( 0, commonPkt );	// set the commonPkt id
+	myMsg->setXoredIds( 1, newPkt );	// set the newPkt id
 
 	//int toNode;
 	getParentModule()->getParentModule()->bubble("XOR MSG");
